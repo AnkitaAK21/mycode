@@ -1,23 +1,23 @@
 #include<stdio.h>
-void read(int a[10][10],int n)
+void read(int (*a)[10],int n)
 {
     int i,j;
     for(i=0;i<n;i++)
     {
         for(j=0;j<n;j++)
         {
-            scanf("%d",&a[i][j]);
+            scanf("%d",*(a+i)+j);
         }
     }
 }
-void display(int a[10][10],int n)
+void display(int (*a)[10],int n)
 {
      int i,j;
     for(i=0;i<n;i++)
     {
         for(j=0;j<n;j++)
         {
-            printf("%d\t",a[i][j]);
+            printf("%d\t",*(*(a+i)+j));
         }        printf("\n");
     }
 }
