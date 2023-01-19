@@ -17,10 +17,10 @@ int main()
                 count++;
             }
             if(count>1)
-            
-            {
                 printf("%d has a frequency of %d times\n",arr[i],count);
             count=0;   
         }
+        
        return 0;
+        
 } 
