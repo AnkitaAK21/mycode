@@ -9,5 +9,4 @@ for(i=1;i<=n;i++)
     printf("%d\t",j);
     printf("\n");
 }
-return 0;
 }

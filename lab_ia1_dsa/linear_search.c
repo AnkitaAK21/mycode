@@ -25,7 +25,7 @@ int main()
     printf("enter the n\n");
     scanf("%d",&n);
     printf("details\n");
-    read(&a[0],n);
+    read(a,n);
     printf("enter the key\n");
     scanf("%d",&key);
     printf("\n\n");

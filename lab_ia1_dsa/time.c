@@ -11,25 +11,24 @@ void display(struct TIME t)
 {
     printf("%d:%d:%d\n",t.hh,t.mm,t.ss);
 }
-struct TIME add(struct TIME t1,struct TIME t2)
+void add(struct TIME t1,struct TIME t2,struct TIME* t3)
 {
     int carry=0;
-    struct TIME t3;
-    t3.ss=t1.ss+t2.ss;
-    if(t3.ss>=60)
+    t3->ss=t1.ss+t2.ss;
+    if(t3->ss>=60)
     {
-        t3.ss=t3.ss-60;
+        t3->ss=t3->ss-60;
         carry=1;
     }
-    t3.mm=t1.mm+t2.mm+carry;
+    t3->mm=t1.mm+t2.mm+carry;
     carry=0;
-    if(t3.mm>=60)
+    if(t3->mm>=60)
     {
-        t3.mm-=60;
+        t3->mm-=60;
         carry=1;
     }
-    t3.hh=t1.hh+t2.hh+carry;
-    return t3;
+    t3->hh=t1.hh+t2.hh+carry;
+    
 }    
 struct TIME diff(struct TIME t1,struct TIME t2)
 {
@@ -67,7 +66,7 @@ int main()
     printf("the two timings are:\n");
     display(t1);
     display(t2);
-    t3=add(t1,t2);
+    add(t1,t2,&t3);
     printf("sum is:\n");
     printf("%d:%d:%d\n",t3.hh,t3.mm,t3.ss);
     t4=diff(t1,t2);
